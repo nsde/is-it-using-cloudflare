@@ -26,17 +26,6 @@ def check_headers(response: requests.Response) -> bool:
 
     return result
 
-def check_cookies(response: requests.Response) -> bool:
-    """Check if the response cookies indicate that the site is using Cloudflare."""
-
-    result = {
-        'session': False
-    }
-
-    if '__cf_bm' in response.cookies:
-        result['session'] = True
-
-    return result
 
 def is_using_cloudflare(url: str) -> bool:
     """Check if a site is using Cloudflare by making a request to it and checking the
@@ -47,10 +36,7 @@ def is_using_cloudflare(url: str) -> bool:
 
     response = requests.get(url, timeout=10)
 
-    results = {
-        'headers': check_headers(response),
-        'cookie': check_cookies(response)
-    }
+    results = check_headers(response)
 
     return results
 
