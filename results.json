@@ -1,0 +1,153 @@
+{
+    "ai.ci": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "ai.ls": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "pro.ai.ls": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "pizzagpt.it": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "aiask.me": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "freegpt.one": {
+        "server": true,
+        "ray": true,
+        "cache": false
+    },
+    "fastgpt.app": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "chatbot.theb.ai": {
+        "server": true,
+        "ray": true,
+        "cache": false
+    },
+    "dev.yqcloud.top": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "aitianhu.com": {
+        "error": "HTTPConnectionPool(host='aitianhu.com', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019AB773DED0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"
+    },
+    "51buygpt.com": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "promptboom.com": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "promptboom.com/chatgptpro": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "chatgptunli.com": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chat.gptplus.one": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chatgptproxy.me": {
+        "error": "HTTPSConnectionPool(host='www.chatgptproxy.me', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(\"hostname 'www.chatgptproxy.me' doesn't match 'chatgptproxy.me'\")))"
+    },
+    "chatgptproxy.info": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "gpt4.gravityengine.cc": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "chat.gpt.bz/gpt": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chat.cutim.one": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chatgpt.dreamtrend.net": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chat.ok2ai.com": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "vip6.shkj321.com": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chataibase.com": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "desk.im": {
+        "server": true,
+        "ray": true,
+        "cache": true
+    },
+    "greengpt.app/chat": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chatforai.com/": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chatforai.site/": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "chat.zhulei.xyz/": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "trychatgp.com": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    },
+    "omg.ck9.us/": {
+        "server": false,
+        "ray": false,
+        "cache": false
+    }
+}
