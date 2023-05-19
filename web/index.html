@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckFlare</title>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            outline: none;
+            border: none;
+            color: #fff;
+        }
+
+        body {
+            padding-top: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e1e1e;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+        }
+
+        button {
+            width: auto;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            background: #262b7d;
+        }
+
+        div.results {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        div.result {
+            font-size: 1.5rem;
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            background: #161616;
+        }
+
+        .green {
+            background: #1e7e34 !important;
+        }
+
+        .red {
+            background: #7e1e1e !important;
+        }
+
+        blockquote {
+            margin-left: 0;
+            background: #243545;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CheckFlare</h1>
+    <p>Check if a website is running Cloudflare.</p>
+
+    <input type="text" id="url" placeholder="https://example.com">
+    <button id="check" onclick="checkCloudflare(url.value)">Check</button>
+    <br>
+
+    <h2>Results</h2>
+    <blockquote>
+        Green means that Cloudflare is <b><u>not</u></b> detected.
+    </blockquote>
+
+    <div class="results">
+        <div class="result" id="server">Server</div>
+        <div class="result" id="ray">Ray</div>
+        <div class="result" id="cache">Cache</div>
+    </div>
+
+    <script>
+        async function checkCloudflare(url) {
+            if (!url.startsWith('http')) {
+              url = `http://${url}`;
+            }
+            
+            url = `https://corsproxy.io/?${url}`;
+
+            response = await fetch(url, {
+                method: 'GET',
+                //mode: 'cors',
+                //cache: 'no-cache',
+                //credentials: 'omit',
+                //redirect: 'follow',
+                //referrerPolicy: 'no-referrer',
+                timeout: 5000
+            });
+
+            // make every key of the map lowercase
+            headers = response.headers;
+
+            if (headers.get('server') === 'cloudflare') {
+                server.classList.add('red');
+            } else {
+                server.classList.add('green');
+            }
+            if (headers.get('cf-ray')) {
+                ray.classList.add('red');
+            } else {
+                ray.classList.add('green');
+            }
+            if (headers.get('cf-cache-status')) {
+                cache.classList.add('red');
+            } else {
+                cache.classList.add('green');
+            }
+        }
+    </script>
+</body>
+</html>
