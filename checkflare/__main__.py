@@ -1,10 +1,14 @@
 """Checks if a site is using Cloudflare"""
 
+import sys
 import json
 import requests
 
 from rich import print
+from rich.console import Console
 from concurrent.futures import ThreadPoolExecutor
+
+console = Console()
 
 def check_headers(response: requests.Response) -> bool:
     """Check if the response headers indicate that the site is using Cloudflare."""""
@@ -82,7 +86,7 @@ def main():
     """Example"""
 
     while True:
-        url = input('Enter a URL: ')
+        url = console.input('[green]Enter a URL: [/green]')
         print(f'[blue]Checking {url}...[/blue]')
 
         try:
@@ -94,7 +98,7 @@ def main():
         print(results)
 
 if __name__ == '__main__':
-    # main()
-
-    bulk_check('urls.txt')
-
+    if len(sys.argv) == 2:
+        bulk_check(sys.argv[-1])
+    else:
+        main()

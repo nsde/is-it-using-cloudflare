@@ -9,6 +9,7 @@
         ".vscode": true
     },
     "hide-files.files": [
-        ".vscode"
+        ".vscode",
+        "checkflare/__pycache__"
     ]
 }
