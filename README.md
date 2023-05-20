@@ -1,4 +1,5 @@
 # is-it-using-cloudflare
+## [✨ Now also as a web UI](https://nsde.github.io/is-it-using-cloudflare/web/index.html)
 Checks if a website uses Cloudflare or not using multiple methods.
 
 It's as simple as that!
