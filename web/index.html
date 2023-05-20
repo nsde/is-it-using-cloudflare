@@ -16,6 +16,7 @@
 
         body {
             padding-top: 2rem;
+            padding-inline: 2rem;
             max-width: 800px;
             margin: 0 auto;
             background: #1e1e1e;
@@ -41,6 +42,16 @@
         div.results {
             display: flex;
             justify-content: space-around;
+        }
+
+        @media (max-width: 600px) {
+            div.results {
+                flex-direction: column;
+            }
+
+            div.result {
+                margin-top: 0.5rem;
+            }
         }
 
         div.result {
